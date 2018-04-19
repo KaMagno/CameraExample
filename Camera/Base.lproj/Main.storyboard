@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,111 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtO-wR-grc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTn-2m-xT5">
+                                <rect key="frame" x="158" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="my6-63-YET"/>
+                                    <constraint firstAttribute="width" secondItem="zTn-2m-xT5" secondAttribute="height" multiplier="1:1" id="obr-mw-azx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tapTakePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="neu-5r-kat"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="huR-1n-jCA">
+                                <rect key="frame" x="262" y="603" width="93" height="29"/>
+                                <segments>
+                                    <segment title="Back"/>
+                                    <segment title="Front"/>
+                                </segments>
+                                <connections>
+                                    <action selector="valueChangedCamera:" destination="BYZ-38-t0r" eventType="valueChanged" id="naY-4m-P6R"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="p3D-rQ-jt0">
+                                <rect key="frame" x="20" y="601.5" width="93.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acE-0z-XKF">
+                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p51-Dr-wN5">
+                                        <rect key="frame" x="44.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="valueChangedFlash:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hrg-dp-Upk"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="JtO-wR-grc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0dV-vm-7Ik"/>
+                            <constraint firstItem="p3D-rQ-jt0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3ia-Ff-6uq"/>
+                            <constraint firstItem="JtO-wR-grc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5qW-zB-abB"/>
+                            <constraint firstItem="huR-1n-jCA" firstAttribute="centerY" secondItem="zTn-2m-xT5" secondAttribute="centerY" id="Hs2-9Z-3xS"/>
+                            <constraint firstItem="p3D-rQ-jt0" firstAttribute="centerY" secondItem="zTn-2m-xT5" secondAttribute="centerY" id="LUa-ua-m0b"/>
+                            <constraint firstItem="JtO-wR-grc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qty-Ik-Bdl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="huR-1n-jCA" secondAttribute="trailing" constant="20" id="bcI-DR-mqc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zTn-2m-xT5" secondAttribute="bottom" constant="20" id="iHN-V6-G7y"/>
+                            <constraint firstItem="zTn-2m-xT5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lNw-4W-enq"/>
+                            <constraint firstItem="JtO-wR-grc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="o9n-Pv-U4H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="outletCameraView" destination="JtO-wR-grc" id="lZD-89-dd5"/>
+                        <outlet property="outletCamerasSegement" destination="huR-1n-jCA" id="vgL-xb-x1x"/>
+                        <outlet property="outletCaptureButton" destination="zTn-2m-xT5" id="Zab-Tx-GuV"/>
+                        <outlet property="outletFlash" destination="p3D-rQ-jt0" id="s9z-ti-fYJ"/>
+                        <outlet property="outletFlashSwitch" destination="p51-Dr-wN5" id="nU5-LX-zmE"/>
+                        <segue destination="oXi-qH-dSs" kind="presentation" identifier="toPreviewViewController" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="wuC-cO-ZKY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="133.5832083958021"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="KDb-WN-Lho">
+            <objects>
+                <viewController id="oXi-qH-dSs" customClass="PreviewViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o4k-ZW-DdP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Du-JU-ixJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rEg-cb-LJ2" firstAttribute="bottom" secondItem="0Du-JU-ixJ" secondAttribute="bottom" id="5FY-Wn-ze7"/>
+                            <constraint firstItem="rEg-cb-LJ2" firstAttribute="trailing" secondItem="0Du-JU-ixJ" secondAttribute="trailing" id="5w7-go-Cha"/>
+                            <constraint firstItem="0Du-JU-ixJ" firstAttribute="top" secondItem="o4k-ZW-DdP" secondAttribute="top" id="sRf-25-f5N"/>
+                            <constraint firstItem="0Du-JU-ixJ" firstAttribute="leading" secondItem="rEg-cb-LJ2" secondAttribute="leading" id="zb2-HZ-fgJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rEg-cb-LJ2"/>
+                    </view>
+                    <connections>
+                        <outlet property="outletImage" destination="0Du-JU-ixJ" id="kkN-aB-pb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U97-5X-YJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="134"/>
         </scene>
     </scenes>
 </document>

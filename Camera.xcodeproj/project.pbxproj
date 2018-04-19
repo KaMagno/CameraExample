@@ -15,6 +15,7 @@
 		F78774562089166500788B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78774542089166500788B31 /* LaunchScreen.storyboard */; };
 		F78774612089166500788B31 /* CameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78774602089166500788B31 /* CameraTests.swift */; };
 		F787746C2089166500788B31 /* CameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F787746B2089166500788B31 /* CameraUITests.swift */; };
+		F787747A20892DC000788B31 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F787747920892DC000788B31 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F78774672089166500788B31 /* CameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F787746B2089166500788B31 /* CameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUITests.swift; sourceTree = "<group>"; };
 		F787746D2089166500788B31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F787747920892DC000788B31 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				F78774482089166200788B31 /* AppDelegate.swift */,
 				F787744A2089166200788B31 /* ViewController.swift */,
+				F787747920892DC000788B31 /* PreviewViewController.swift */,
 				F787744C2089166200788B31 /* Main.storyboard */,
 				F78774522089166500788B31 /* Assets.xcassets */,
 				F78774542089166500788B31 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				F787744B2089166200788B31 /* ViewController.swift in Sources */,
 				F78774512089166200788B31 /* Camera.xcdatamodeld in Sources */,
 				F78774492089166200788B31 /* AppDelegate.swift in Sources */,
+				F787747A20892DC000788B31 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
